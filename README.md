@@ -145,3 +145,66 @@ ATURAN WAJIB:
 6. Jika diminta penjelasan teknis, uraikan sampai ke tingkat detail terendah, seolah berbicara dengan ahli yang paham mendalam.
 7. Saat menganalisis, merancang, atau memecahkan masalah: uraikan dari dasar, bahas semua sisi, bandingkan opsi, berikan pertimbangan, rumuskan langkah, buat kesimpulan, dan rekomendasi yang jelas.
 8. Untuk peristiwa masa lalu, sekarang, atau masa depan: jelaskan fakta, gambarkan situasi, bahas dampak, pertimbangkan kemungkinan, dan susun prediksi atau solusi yang masuk akal.
+
+```
+
+# 🔧 PARAMETER GENERASI & PENGATURAN MENJAWAB
+
+> **Model**: Qwen3.5-4B-Uncensored-HauhauCS-Aggressive
+> **Versi**: BF16 (Kualitas Tertinggi)
+> **Tujuan**: Menentukan gaya, akurasi, dan kelengkapan jawaban yang dihasilkan
+
+Berikut adalah daftar parameter yang telah diuji coba dan dioptimalkan khusus untuk model ini. Nilai-nilai di bawah ini memberikan keseimbangan terbaik antara keakuratan informasi, kreativitas, kelengkapan penjelasan, dan keamanan dari halusinasi (informasi palsu).
+
+---
+
+## 📋 DAFTAR PARAMETER & NILAI OPTIMAL
+
+| Parameter | Nilai | Satuan / Rentang | Penjelasan & Fungsi |
+|---|---|---|---|
+| **`temperature`** | `0.6` | 0.0 – 2.0 | **Pengendali Kreativitas & Keacakan**<br>- Nilai rendah (0.1–0.5): Jawaban sangat pasti, kaku, fakta murni.<br>- Nilai sedang (0.6–0.8): ✅ **TERBAIK** — Seimbang, logis, variatif, tidak berulang.<br>- Nilai tinggi (0.9+): Jawaban sangat kreatif, imajinatif, berisiko menyimpang/fiktif.<br>→ *0.6 = Paling cocok untuk penjelasan teknis, ilmiah, dan rinci.* |
+| **`top_p` (Nucleus Sampling)** | `0.95` | 0.0 – 1.0 | **Penyaringan Kata Berdasarkan Probabilitas**<br>Memilih kata hanya dari kelompok yang memiliki kemungkinan muncul paling besar (95%).<br>→ Membatasi pilihan kata agar tetap relevan, namun tetap kaya variasi bahasa. Mencegah kata-kata aneh atau tidak nyambung muncul. |
+| **`top_k`** | `20` | 0 – 100+ | **Batas Jumlah Pilihan Kata Teratas**<br>Hanya mengambil 20 kata paling mungkin selanjutnya.<br>→ Membuat jawaban lebih terarah, logis, dan cepat. Nilai kecil mencegah percabangan jawaban yang tidak perlu. |
+| **`num_ctx` (Context Length)** | `131072` | 512 – 262144+ | **KAPASITAS INGATAN / PANJANG KONTEKS**<br>Jumlah maksimal kata yang bisa diingat dalam satu sesi percakapan.<br>- `131072` = ± **100.000 kata**.<br>- ✅ Aman & stabil untuk RAM 16GB.<br>- Memungkinkan kamu memasukkan dokumen panjang, bab buku, atau data besar agar dianalisis model. |
+| **`max_tokens`** | `-1` | -1 / 1 – 99999 | **BATAS PANJANG JAWABAN**<br>- `-1` = ✅ **TANPA BATAS** — Jawaban akan ditulis selengkap mungkin sampai selesai atau sampai konteks penuh.<br>- Angka lain = Memotong jawaban sejumlah angka tersebut.<br>→ *Penting: Karena model ini dirancang untuk jawaban rinci, gunakan `-1` agar tidak terpotong di tengah jalan.* |
+| **`presence_penalty`** | `1.2` | -2.0 – +2.0 | **DORONGAN TOPIK BARU**<br>Nilai positif membuat model lebih suka membahas poin baru, tidak terpaku pada hal yang sudah disebutkan.<br>→ `1.2` = Mendorong penjelasan mendalam, membahas aspek-aspek lain, tidak berputar di tempat. |
+| **`frequency_penalty`** | `0.3` | -2.0 – +2.0 | **PENGHINDARAN PENGULANGAN**<br>Mengurangi kemungkinan mengulang kata atau kalimat yang sama berulang kali.<br>→ `0.3` = Cukup untuk menjaga kelancaran teks tanpa membuat gaya bahasa berubah drastis. |
+| **`seed`** | `-1` | -1 / 0 – 999999 | **BENIH ACAK**<br>- `-1` = Setiap kali tanya hal yang sama, jawaban bisa berbeda susunan kata (tetap makna sama).<br>- Angka tetap = Jawaban akan **SAMA PERSIS** setiap kali ditanya.<br>→ Gunakan `-1` agar jawaban terasa alami dan tidak kaku seperti robot. |
+
+---
+
+## ⚙️ PENGATURAN KHUSUS PERANGKAT (Axioo Hype 5)
+
+Parameter ini mengatur bagaimana laptop kamu memproses data modelnya:
+
+| Pengaturan | Nilai | Status | Keterangan |
+|---|---|---|---|
+| **`GPU Acceleration`** | `ON` | ✅ WAJIB | Mengaktifkan kartu grafis Radeon 660M. Tanpa ini, jalan sangat lambat. |
+| **`GPU Layers`** | `32` | ✅ MAKSIMAL | Jumlah lapisan model yang dimuat ke GPU. Model ini punya 32 lapisan, masukkan semua agar kencang. |
+| **`CPU Threads`** | `10` | ✅ OPTIMAL | Jumlah utas prosesor yang dipakai. Ryzen 5 6600H punya 12 utas. Pakai 10 saja, sisakan 2 untuk sistem Windows agar tidak macet. |
+| **`Batch Size`** | `512` | ✅ CEPAT | Jumlah data yang diproses sekaligus. Nilai ini paling pas untuk memori DDR5 kamu. |
+| **`Memory Lock`** | `ON` | ✅ STABIL | Mengunci data model di RAM. Tidak bolak-balik baca tulis ke SSD, bikin lebih cepat dan awet SSD. |
+
+---
+
+## 📌 REKOMENDASI PENGGUNAAN BERDASARKAN KEBUTUHAN
+
+### 1. 📚 PENJELASAN TEKNIS / ILMIAH / TUGAS
+> **Gunakan Nilai Bawaan Seperti di Atas:**
+> `temp=0.6`, `top_p=0.95`, `ctx=131072`, `max_tokens=-1`
+> → **Hasil**: Jawaban lengkap, rinci, logis, tidak ada yang dipendekkan.
+
+### 2. ✍️ MENULIS KARYA SASTRA / CERITA / KREATIF
+> **Ubah Sedikit:**
+> `temp=0.8`, `top_p=0.98`, `top_k=40`
+> → **Hasil**: Lebih berwarna, imajinatif, variasi kata banyak, cerita mengalir.
+
+### 3. 🧮 BERHITUNG / KODE PEMROGRAMAN / FAKTA TEPAT
+> **Ubah Sedikit:**
+> `temp=0.2`, `top_p=0.85`, `top_k=10`
+> → **Hasil**: Sangat pasti, akurat, minim kesalahan, tidak berkreasi sembarangan.
+
+---
+
+> ⚠️ **Catatan Penting:**
+> Karena model ini adalah versi **Uncensored / Tanpa Sensor**, parameter di atas **TIDAK AKAN MENGUBAH SIFAT KEAMANAN** model. Parameter hanya mengubah **gaya bahasa dan panjang jawaban**, sifat "menjawab segalanya" tetap aktif selamanya.
