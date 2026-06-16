@@ -6,13 +6,15 @@
 
 ## 📊 PERBANDINGAN SEMUA VERSI GGUF
 
-|   Nama File     |   Ukuran   |      Kualitas     |                                 Detail                                     |                       Cocok Untuk                        |
-| **BF16.gguf**   | **7,9 GB** | 💯 **100% MURNI** | Tidak ada penurunan sama sekali. Akurasi tertinggi, teknis paling lengkap. | ✅ PC/Laptop RAM ≥12GB *(Cocok untuk Axioo Hype 5 16GB)* |
-| **Q8_0.gguf**   | **4,2 GB** |     ⭐ 98–99%     | Hampir sama persis, beda sangat kecil. Sangat stabil.                      | PC/Laptop RAM ≥6GB<br>Ingin hemat sedikit ruang          |
-| **Q6_K.gguf**   | **3,3 GB** |     ⭐ 96–97%     | Kualitas sangat baik, detail masih lengkap.                                | RAM ≥5GB, ingin ringan                                   |
-| **Q5_K_M.gguf** | **2,8 GB** |     ⭐ 94–95%     | Seimbang ukuran & kualitas.                                                | RAM ≥4GB, perangkat menengah                             |
-| **Q4_K_M.gguf** | **2,3 GB** |     ✅ 90–92%     | Standar, cukup bagus, ringan.                                              | RAM ≥3GB, HP/perangkat kecil                             |
-| **Q2_K.gguf**   | **1,3 GB** |     ⚠️ 75–80%     | Agak turun, kurang rinci.                                                  | Hanya untuk spesifikasi sangat rendah                    |
+| Nama File | Ukuran | Kualitas | Detail | Cocok Untuk |
+|---|---|---|---|---|
+| **BF16.gguf** | **7,9 GB** | 💯 **100% MURNI** | Tidak ada penurunan sama sekali. Akurasi tertinggi, teknis paling lengkap. | ✅ **REKOMENDASI UTAMA**<br>PC/Laptop RAM ≥12GB<br>*(Cocok untuk Axioo Hype 5 16GB)* |
+| **Q8_0.gguf** | **4,2 GB** | ⭐ 98–99% | Hampir sama persis, beda sangat kecil. Sangat stabil. | PC/Laptop RAM ≥6GB<br>Ingin hemat sedikit ruang |
+| **Q6_K.gguf** | **3,3 GB** | ⭐ 96–97% | Kualitas sangat baik, detail masih lengkap. | RAM ≥5GB, ingin ringan |
+| **Q5_K_M.gguf** | **2,8 GB** | ⭐ 94–95% | Seimbang ukuran & kualitas. | RAM ≥4GB, perangkat menengah |
+| **Q4_K_M.gguf** | **2,3 GB** | ✅ 90–92% | Standar, cukup bagus, ringan. | RAM ≥3GB, HP/perangkat kecil |
+| **Q2_K.gguf** | **1,3 GB** | ⚠️ 75–80% | Agak turun, kurang rinci. | Hanya untuk spesifikasi sangat rendah |
+
 
 ---
 
