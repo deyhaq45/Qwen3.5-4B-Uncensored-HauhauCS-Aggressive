@@ -18,11 +18,11 @@ Berikut adalah **3 Cara Paling Gampang, Aman, dan Pasti Berhasil** untuk mengund
 > https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-BF16.gguf?download=true
 
 #### 🔹 Versi Lain (Kalau butuh ukuran lebih kecil)
-- **Q8_0 - 4,2 GB | Kualitas 98-99%**
-- https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q8_0.gguf?download=true
+> **Q8_0 - 4,2 GB | Kualitas 98-99%**
+> https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q8_0.gguf?download=true
   
-- **Q6_K - 3,3 GB | Kualitas 96-97%**
-- https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf?download=true
+> **Q6_K - 3,3 GB | Kualitas 96-97%**
+> https://huggingface.co/HauhauCS/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-4B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf?download=true
   
 #### 🔹 File Tambahan (Wajib kalau mau fitur BACA GAMBAR)
 > **mmproj-BF16 - 645 MB** (Simpan di folder yang sama dengan file utama)
