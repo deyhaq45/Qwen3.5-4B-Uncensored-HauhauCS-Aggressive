@@ -1,0 +1,16 @@
+# File besar model (tidak disimpan di GitHub)
+*.gguf
+*.bin
+*.pth
+*.safetensors
+
+# File sementara & sistem
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+__pycache__/
+
+# Pengaturan pribadi
+.env
+config.local.json
