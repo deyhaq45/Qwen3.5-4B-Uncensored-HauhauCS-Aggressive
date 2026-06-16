@@ -148,7 +148,7 @@ ATURAN WAJIB:
 
 ```
 
-# 🔧 PARAMETER GENERASI & PENGATURAN MENJAWAB
+# 🔧 PARAMETER GENERASI & PENGATURAN 
 
 > **Model**: Qwen3.5-4B-Uncensored-HauhauCS-Aggressive
 > **Versi**: BF16 (Kualitas Tertinggi)
