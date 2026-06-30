@@ -31,7 +31,11 @@
 ---
 
 ## ✅ REKOMENDASI PILIHAN
+
 > **Untuk Axioo Hype 5 (Ryzen 5 6600H / 16GB DDR5):**
+
 > ✅ **Pilihan standar pakai: BF16.gguf**
+
 > ✅ Alasan: RAM cukup besar, grafis kuat, hasil paling akurat & rinci.
+
 > ❌ **JANGAN pakai Q4 atau lebih kecil**: kemampuan laptop terbuang.
